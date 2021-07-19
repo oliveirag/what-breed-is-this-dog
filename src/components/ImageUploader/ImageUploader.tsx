@@ -1,12 +1,12 @@
-import { ChangeEvent, FC, useEffect, useState } from "react";
+import { FC, useState } from "react";
 import Dropzone from "react-dropzone";
 import { useImageUploaderStyles } from "./useImageUploaderStyles";
 
 type Props = {
-  onLoad?: (fileUrl: string) => void;
+  onImageLoad?: (image: HTMLImageElement) => void;
 };
 
-export const ImageUploader: FC<Props> = ({ onLoad }) => {
+export const ImageUploader: FC<Props> = ({ onImageLoad }) => {
   const classes = useImageUploaderStyles();
   const [fileUrl, setFileUrl] = useState("");
   const updatePreview = ([file]: File[]) => {
@@ -15,12 +15,6 @@ export const ImageUploader: FC<Props> = ({ onLoad }) => {
     }
     setFileUrl(URL.createObjectURL(file));
   };
-
-  useEffect(() => {
-    if (onLoad) {
-      onLoad(fileUrl);
-    }
-  }, [fileUrl, onLoad]);
 
   return (
     <Dropzone
@@ -37,6 +31,9 @@ export const ImageUploader: FC<Props> = ({ onLoad }) => {
               className={classes.preview}
               src={fileUrl}
               alt="uploaded file preview"
+              onLoad={(event) =>
+                onImageLoad && onImageLoad(event.currentTarget)
+              }
             />
           )}
           <input {...getInputProps()} />
