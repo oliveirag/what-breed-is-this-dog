@@ -5,6 +5,7 @@ import { ImageUploader } from "./components/ImageUploader/ImageUploader";
 import { makeStyles } from "@material-ui/styles";
 import { GraphModel } from "@tensorflow/tfjs";
 import { breeds } from "./breeds";
+import { ImageGallery } from "./components/ImageGallery/ImageGallery";
 
 const useStyles = makeStyles({
   root: {
@@ -22,6 +23,7 @@ export const App: FC = () => {
   const classes = useStyles();
   const [model, setModel] = useState<GraphModel>();
   const [breedIndex, setBreedIndex] = useState(-1);
+  const [imageUrls, setImageUrls] = useState([]);
 
   useEffect(() => {
     (async () => {
@@ -54,7 +56,7 @@ export const App: FC = () => {
   const fetchSameBreedDogs = async () => {
     fetch(`https://dog.ceo/api/breed/${breeds[breedIndex].id}/images`)
       .then((res) => res.json())
-      .then((res) => console.log(res));
+      .then((res) => setImageUrls(res.message));
   };
 
   useEffect(() => {
@@ -69,6 +71,7 @@ export const App: FC = () => {
         <img src={logo} alt="logo" />
       </header>
       <ImageUploader onImageLoad={handleImageLoad} />
+      {imageUrls.length > 0 && <ImageGallery urls={imageUrls} />}
     </div>
   );
 };
