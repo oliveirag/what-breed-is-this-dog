@@ -1,20 +1,23 @@
-import { FC, useState } from "react";
+import { FC } from "react";
 import Dropzone from "react-dropzone";
 import { useImageUploaderStyles } from "./useImageUploaderStyles";
+import { useImageFileUrl } from "./useImageFileUrl";
 
 type Props = {
   onImageLoad?: (image: HTMLImageElement) => void;
+  predictionHasError: boolean;
 };
 
-export const ImageUploader: FC<Props> = ({ onImageLoad }) => {
+export const ImageUploader: FC<Props> = ({
+  onImageLoad,
+  predictionHasError,
+}) => {
   const classes = useImageUploaderStyles();
-  const [fileUrl, setFileUrl] = useState("");
-  const updatePreview = ([file]: File[]) => {
-    if (fileUrl) {
-      URL.revokeObjectURL(fileUrl);
-    }
-    setFileUrl(URL.createObjectURL(file));
-  };
+  const { fileUrl, updatePreview } = useImageFileUrl();
+
+  if (predictionHasError) {
+    return <>Fail on TensorFlow. Please refresh</>;
+  }
 
   return (
     <Dropzone

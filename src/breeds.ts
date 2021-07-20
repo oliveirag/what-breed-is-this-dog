@@ -1,582 +1,587 @@
-export const breeds = [
+type BreedData = {
+  name: string;
+  resourceId: string;
+};
+
+export const breeds: BreedData[] = [
   {
     name: "affenpinscher",
-    id: "affenpinscher",
+    resourceId: "affenpinscher",
   },
   {
     name: "african",
-    id: "african",
+    resourceId: "african",
   },
   {
     name: "airedale",
-    id: "airedale",
+    resourceId: "airedale",
   },
   {
     name: "akita",
-    id: "akita",
+    resourceId: "akita",
   },
   {
     name: "appenzeller",
-    id: "appenzeller",
+    resourceId: "appenzeller",
   },
   {
     name: "australian shepherd",
-    id: "shepherd/australian",
+    resourceId: "shepherd/australian",
   },
   {
     name: "basenji",
-    id: "basenji",
+    resourceId: "basenji",
   },
   {
     name: "beagle",
-    id: "beagle",
+    resourceId: "beagle",
   },
   {
     name: "bluetick",
-    id: "bluetick",
+    resourceId: "bluetick",
   },
   {
     name: "borzoi",
-    id: "borzoi",
+    resourceId: "borzoi",
   },
   {
     name: "bouvier",
-    id: "bouvier",
+    resourceId: "bouvier",
   },
   {
     name: "boxer",
-    id: "boxer",
+    resourceId: "boxer",
   },
   {
     name: "brabancon",
-    id: "brabancon",
+    resourceId: "brabancon",
   },
   {
     name: "briard",
-    id: "briard",
+    resourceId: "briard",
   },
   {
     name: "norwegian buhund",
-    id: "buhund/norwegian",
+    resourceId: "buhund/norwegian",
   },
   {
     name: "boston bulldog",
-    id: "bulldog/boston",
+    resourceId: "bulldog/boston",
   },
   {
     name: "english bulldog",
-    id: "bulldog/english",
+    resourceId: "bulldog/english",
   },
   {
     name: "french bulldog",
-    id: "bulldog/french",
+    resourceId: "bulldog/french",
   },
   {
     name: "staffie",
-    id: "staffie",
+    resourceId: "staffie",
   },
   {
     name: "cairn",
-    id: "cairn",
+    resourceId: "cairn",
   },
   {
     name: "australian cattledog",
-    id: "cattledog/australian",
+    resourceId: "cattledog/australian",
   },
   {
     name: "chihuahua",
-    id: "chihuahua",
+    resourceId: "chihuahua",
   },
   {
     name: "chow",
-    id: "chow",
+    resourceId: "chow",
   },
   {
     name: "clumber",
-    id: "clumber",
+    resourceId: "clumber",
   },
   {
     name: "cockapoo",
-    id: "cockapoo",
+    resourceId: "cockapoo",
   },
   {
     name: "collie",
-    id: "collie",
+    resourceId: "collie",
   },
   {
     name: "border collie",
-    id: "collie/border",
+    resourceId: "collie/border",
   },
   {
     name: "coonhound",
-    id: "coonhound",
+    resourceId: "coonhound",
   },
   {
     name: "corgi",
-    id: "corgi",
+    resourceId: "corgi",
   },
   {
     name: "cardigan corgi",
-    id: "corgi/cardigan",
+    resourceId: "corgi/cardigan",
   },
   {
     name: "cotondetulear",
-    id: "cotondetulear",
+    resourceId: "cotondetulear",
   },
   {
     name: "dachshund",
-    id: "dachshund",
+    resourceId: "dachshund",
   },
   {
     name: "dalmatian",
-    id: "dalmatian",
+    resourceId: "dalmatian",
   },
   {
     name: "great dane",
-    id: "dane/great",
+    resourceId: "dane/great",
   },
   {
     name: "scottish deerhound",
-    id: "deerhound/scottish",
+    resourceId: "deerhound/scottish",
   },
   {
     name: "dhole",
-    id: "dhole",
+    resourceId: "dhole",
   },
   {
     name: "dingo",
-    id: "dingo",
+    resourceId: "dingo",
   },
   {
     name: "doberman",
-    id: "doberman",
+    resourceId: "doberman",
   },
   {
     name: "norwegian elkhound",
-    id: "elkhound/norwegian",
+    resourceId: "elkhound/norwegian",
   },
   {
     name: "entlebucher",
-    id: "entlebucher",
+    resourceId: "entlebucher",
   },
   {
     name: "eskimo",
-    id: "eskimo",
+    resourceId: "eskimo",
   },
   {
     name: "finnish lapphund",
-    id: "lapphund/finnish",
+    resourceId: "lapphund/finnish",
   },
   {
     name: "frise bichon",
-    id: "bichon/frise",
+    resourceId: "bichon/frise",
   },
   {
     name: "german shepherd",
-    id: "shepherd/german",
+    resourceId: "shepherd/german",
   },
   {
     name: "greyhound",
-    id: "greyhound",
+    resourceId: "greyhound",
   },
   {
     name: "italian greyhound",
-    id: "greyhound/italian",
+    resourceId: "greyhound/italian",
   },
   {
     name: "groenendael",
-    id: "groenendael",
+    resourceId: "groenendael",
   },
   {
     name: "havanese",
-    id: "havanese",
+    resourceId: "havanese",
   },
   {
     name: "afghan hound",
-    id: "hound/afghan",
+    resourceId: "hound/afghan",
   },
   {
     name: "basset hound",
-    id: "hound/basset",
+    resourceId: "hound/basset",
   },
   {
     name: "blood hound",
-    id: "hound/blood",
+    resourceId: "hound/blood",
   },
   {
     name: "english hound",
-    id: "hound/english",
+    resourceId: "hound/english",
   },
   {
     name: "ibizan hound",
-    id: "hound/ibizan",
+    resourceId: "hound/ibizan",
   },
   {
     name: "plott hound",
-    id: "hound/plott",
+    resourceId: "hound/plott",
   },
   {
     name: "walker hound",
-    id: "hound/walker",
+    resourceId: "hound/walker",
   },
   {
     name: "husky",
-    id: "husky",
+    resourceId: "husky",
   },
   {
     name: "keeshond",
-    id: "keeshond",
+    resourceId: "keeshond",
   },
   {
     name: "kelpie",
-    id: "kelpie",
+    resourceId: "kelpie",
   },
   {
     name: "komondor",
-    id: "komondor",
+    resourceId: "komondor",
   },
   {
     name: "kuvasz",
-    id: "kuvasz",
+    resourceId: "kuvasz",
   },
   {
     name: "labrador",
-    id: "labrador",
+    resourceId: "labrador",
   },
   {
     name: "leonberg",
-    id: "leonberg",
+    resourceId: "leonberg",
   },
   {
     name: "lhasa",
-    id: "lhasa",
+    resourceId: "lhasa",
   },
   {
     name: "malamute",
-    id: "malamute",
+    resourceId: "malamute",
   },
   {
     name: "malinois",
-    id: "malinois",
+    resourceId: "malinois",
   },
   {
     name: "maltese",
-    id: "maltese",
+    resourceId: "maltese",
   },
   {
     name: "bull mastiff",
-    id: "mastiff/bull",
+    resourceId: "mastiff/bull",
   },
   {
     name: "english mastiff",
-    id: "mastiff/english",
+    resourceId: "mastiff/english",
   },
   {
     name: "tibetan mastiff",
-    id: "mastiff/tibetan",
+    resourceId: "mastiff/tibetan",
   },
   {
     name: "mexican hairless",
-    id: "hairless/mexican",
+    resourceId: "hairless/mexican",
   },
   {
     name: "mixed breed",
-    id: "mix", //this
+    resourceId: "mix",
   },
   {
     name: "bernese mountain dog",
-    id: "mountain/bernese", //this
+    resourceId: "mountain/bernese",
   },
   {
     name: "swiss mountain dog",
-    id: "mountain/swiss", //this
+    resourceId: "mountain/swiss",
   },
   {
     name: "newfoundland",
-    id: "newfoundland",
+    resourceId: "newfoundland",
   },
   {
     name: "otterhound",
-    id: "otterhound",
+    resourceId: "otterhound",
   },
   {
     name: "caucasian ovcharka",
-    id: "ovcharka/caucasian",
+    resourceId: "ovcharka/caucasian",
   },
   {
     name: "papillon",
-    id: "papillon",
+    resourceId: "papillon",
   },
   {
     name: "pekinese",
-    id: "pekinese",
+    resourceId: "pekinese",
   },
   {
     name: "pembroke",
-    id: "pembroke",
+    resourceId: "pembroke",
   },
   {
     name: "miniature pinscher",
-    id: "pinscher/miniature",
+    resourceId: "pinscher/miniature",
   },
   {
     name: "pitbull",
-    id: "pitbull",
+    resourceId: "pitbull",
   },
   {
     name: "german pointer",
-    id: "pointer/german",
+    resourceId: "pointer/german",
   },
   {
     name: "longhair german pointer",
-    id: "pointer/germanlonghair", //this
+    resourceId: "pointer/germanlonghair",
   },
   {
     name: "pomeranian",
-    id: "pomeranian",
+    resourceId: "pomeranian",
   },
   {
     name: "miniature poodle",
-    id: "poodle/miniature",
+    resourceId: "poodle/miniature",
   },
   {
     name: "poodle",
-    id: "poodle",
+    resourceId: "poodle",
   },
   {
     name: "toy poodle",
-    id: "poodle/toy",
+    resourceId: "poodle/toy",
   },
   {
     name: "pug",
-    id: "pug",
+    resourceId: "pug",
   },
   {
     name: "puggle",
-    id: "puggle",
+    resourceId: "puggle",
   },
   {
     name: "pyrenees",
-    id: "pyrenees",
+    resourceId: "pyrenees",
   },
   {
     name: "redbone",
-    id: "redbone",
+    resourceId: "redbone",
   },
   {
     name: "chesapeake retriever",
-    id: "retriever/chesapeake",
+    resourceId: "retriever/chesapeake",
   },
   {
     name: "curly retriever",
-    id: "retriever/curly",
+    resourceId: "retriever/curly",
   },
   {
     name: "flatcoated retriever",
-    id: "retriever/flatcoated",
+    resourceId: "retriever/flatcoated",
   },
   {
     name: "golden retriever",
-    id: "retriever/golden",
+    resourceId: "retriever/golden",
   },
   {
     name: "rhodesian ridgeback",
-    id: "ridgeback/rhodesian",
+    resourceId: "ridgeback/rhodesian",
   },
   {
     name: "rottweiler",
-    id: "rottweiler",
+    resourceId: "rottweiler",
   },
   {
     name: "saluki",
-    id: "saluki",
+    resourceId: "saluki",
   },
   {
     name: "samoyed",
-    id: "samoyed",
+    resourceId: "samoyed",
   },
   {
     name: "schipperke",
-    id: "schipperke",
+    resourceId: "schipperke",
   },
   {
     name: "schnauzer",
-    id: "schnauzer",
+    resourceId: "schnauzer",
   },
   {
     name: "giant schnauzer",
-    id: "schnauzer/giant",
+    resourceId: "schnauzer/giant",
   },
   {
     name: "miniature schnauzer",
-    id: "schnauzer/miniature",
+    resourceId: "schnauzer/miniature",
   },
   {
     name: "english setter",
-    id: "setter/english",
+    resourceId: "setter/english",
   },
   {
     name: "gordon setter",
-    id: "setter/gordon",
+    resourceId: "setter/gordon",
   },
   {
     name: "irish setter",
-    id: "setter/irish",
+    resourceId: "setter/irish",
   },
   {
     name: "english sheepdog",
-    id: "sheepdog/english",
+    resourceId: "sheepdog/english",
   },
   {
     name: "shetland sheepdog",
-    id: "sheepdog/shetland",
+    resourceId: "sheepdog/shetland",
   },
   {
     name: "shiba",
-    id: "shiba",
+    resourceId: "shiba",
   },
   {
     name: "shihtzu",
-    id: "shihtzu",
+    resourceId: "shihtzu",
   },
   {
     name: "blenheim spaniel",
-    id: "spaniel/blenheim",
+    resourceId: "spaniel/blenheim",
   },
   {
     name: "brittany spaniel",
-    id: "spaniel/brittany",
+    resourceId: "spaniel/brittany",
   },
   {
     name: "cocker spaniel",
-    id: "spaniel/cocker",
+    resourceId: "spaniel/cocker",
   },
   {
     name: "irish spaniel",
-    id: "spaniel/irish",
+    resourceId: "spaniel/irish",
   },
   {
     name: "japanese spaniel",
-    id: "spaniel/japanese",
+    resourceId: "spaniel/japanese",
   },
   {
     name: "sussex spaniel",
-    id: "spaniel/sussex",
+    resourceId: "spaniel/sussex",
   },
   {
     name: "welsh spaniel",
-    id: "spaniel/welsh",
+    resourceId: "spaniel/welsh",
   },
   {
     name: "english springer",
-    id: "springer/english",
+    resourceId: "springer/english",
   },
   {
     name: "saint bernard",
-    id: "bernard/saint",
+    resourceId: "bernard/saint",
   },
   {
     name: "american terrier",
-    id: "terrier/american",
+    resourceId: "terrier/american",
   },
   {
     name: "australian terrier",
-    id: "terrier/australian",
+    resourceId: "terrier/australian",
   },
   {
     name: "bedlington terrier",
-    id: "terrier/bedlington",
+    resourceId: "terrier/bedlington",
   },
   {
     name: "border terrier",
-    id: "terrier/border",
+    resourceId: "terrier/border",
   },
   {
     name: "dandie terrier",
-    id: "terrier/dandie",
+    resourceId: "terrier/dandie",
   },
   {
     name: "fox terrier",
-    id: "terrier/fox",
+    resourceId: "terrier/fox",
   },
   {
     name: "irish terrier",
-    id: "terrier/irish",
+    resourceId: "terrier/irish",
   },
   {
     name: "kerryblue terrier",
-    id: "terrier/kerryblue",
+    resourceId: "terrier/kerryblue",
   },
   {
     name: "lakeland terrier",
-    id: "terrier/lakeland",
+    resourceId: "terrier/lakeland",
   },
   {
     name: "norfolk terrier",
-    id: "terrier/norfolk",
+    resourceId: "terrier/norfolk",
   },
   {
     name: "norwich terrier",
-    id: "terrier/norwich",
+    resourceId: "terrier/norwich",
   },
   {
     name: "patterdale terrier",
-    id: "terrier/patterdale",
+    resourceId: "terrier/patterdale",
   },
   {
     name: "russell terrier",
-    id: "terrier/russell",
+    resourceId: "terrier/russell",
   },
   {
     name: "scottish terrier",
-    id: "terrier/scottish",
+    resourceId: "terrier/scottish",
   },
   {
     name: "sealyham terrier",
-    id: "terrier/sealyham",
+    resourceId: "terrier/sealyham",
   },
   {
     name: "silky terrier",
-    id: "terrier/silky",
+    resourceId: "terrier/silky",
   },
   {
     name: "tibetan terrier",
-    id: "terrier/tibetan",
+    resourceId: "terrier/tibetan",
   },
   {
     name: "toy terrier",
-    id: "terrier/toy",
+    resourceId: "terrier/toy",
   },
   {
     name: "westhighland terrier",
-    id: "terrier/westhighland",
+    resourceId: "terrier/westhighland",
   },
   {
     name: "wheaten terrier",
-    id: "terrier/wheaten",
+    resourceId: "terrier/wheaten",
   },
   {
     name: "yorkshire terrier",
-    id: "terrier/yorkshire",
+    resourceId: "terrier/yorkshire",
   },
   {
     name: "vizsla",
-    id: "vizsla",
+    resourceId: "vizsla",
   },
   {
     name: "spanish waterdog",
-    id: "waterdog/spanish",
+    resourceId: "waterdog/spanish",
   },
   {
     name: "weimaraner",
-    id: "weimaraner",
+    resourceId: "weimaraner",
   },
   {
     name: "whippet",
-    id: "whippet",
+    resourceId: "whippet",
   },
   {
     name: "irish wolfhound",
-    id: "wolfhound/irish",
+    resourceId: "wolfhound/irish",
   },
 ];
