@@ -6,6 +6,7 @@ import { useBreedPrediction } from "./hooks/useBreedPrediction";
 import { useGetSameBreedImages } from "./components/SameBreedGallery/useGetSameBreedImages";
 import { SameBreedGallery } from "./components/SameBreedGallery/SameBreedGallery";
 import { Loading } from "./components/Loading";
+import { BreedName } from "./components/BreedName/BreedName";
 
 const useStyles = makeStyles({
   root: {
@@ -31,11 +32,16 @@ export const App: FC = () => {
       <header className={classes.header}>
         <img src={logo} alt="logo" />
       </header>
+
       <ImageUploader
         onImageLoad={guessBreed}
         predictionHasError={predictionHasError}
       />
+
       {(requestLoading || predictionLoading) && <Loading />}
+
+      <BreedName breedIndex={breedIndex} />
+
       {!predictionLoading && imagesUrls.length > 0 && (
         <SameBreedGallery urls={imagesUrls} requestHasError={requestHasError} />
       )}
