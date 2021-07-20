@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getSameBreedImagesUrls } from "../../api/getSameBreedImagesUrls";
+import { getSameBreedImagesUrls } from "../api/getSameBreedImagesUrls";
 
 type GetSameBreedImagesHook = {
   imagesUrls: string[];

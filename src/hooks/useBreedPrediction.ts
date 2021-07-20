@@ -32,6 +32,8 @@ export const useBreedPrediction = (): BreedPredictionHook => {
     try {
       setPredictionLoading(true);
 
+      // Solution extracted from dog.ceo Github
+      // https://github.com/dog-ceo/guess-that-dog
       const inputTensor = tf.browser.fromPixels(image);
       const resized = tf.image
         .resizeBilinear(inputTensor, [224, 224])

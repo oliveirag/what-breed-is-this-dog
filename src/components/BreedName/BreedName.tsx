@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { breeds } from "../../breeds";
+import { breeds } from "../../utils/breeds";
 
 type Props = {
   breedIndex: number | undefined;

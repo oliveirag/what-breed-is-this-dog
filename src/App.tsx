@@ -3,7 +3,7 @@ import logo from "./logo.svg";
 import { ImageUploader } from "./components/ImageUploader/ImageUploader";
 import { makeStyles } from "@material-ui/styles";
 import { useBreedPrediction } from "./hooks/useBreedPrediction";
-import { useGetSameBreedImages } from "./components/SameBreedGallery/useGetSameBreedImages";
+import { useGetSameBreedImages } from "./hooks/useGetSameBreedImages";
 import { SameBreedGallery } from "./components/SameBreedGallery/SameBreedGallery";
 import { Loading } from "./components/Loading";
 import { BreedName } from "./components/BreedName/BreedName";
@@ -30,7 +30,7 @@ export const App: FC = () => {
   return (
     <div className={classes.root}>
       <header className={classes.header}>
-        <img src={logo} alt="logo" />
+        <img src={logo} alt="What breed is this dog?" />
       </header>
 
       <ImageUploader

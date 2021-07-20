@@ -1,4 +1,4 @@
-import { breeds } from "../breeds";
+import { breeds } from "../utils/breeds";
 import { ApiResponse } from "./ApiResponse";
 
 export const getSameBreedImagesUrls = (
