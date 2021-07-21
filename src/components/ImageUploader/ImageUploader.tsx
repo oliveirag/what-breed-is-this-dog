@@ -24,23 +24,28 @@ export const ImageUploader: FC<Props> = ({
       accept="image/*"
       maxFiles={1}
       multiple={false}
-      noClick={false}
       onDropAccepted={updatePreview}
     >
       {({ getRootProps, getInputProps }) => (
-        <div {...getRootProps()} className={classes.root}>
-          {fileUrl && (
-            <img
-              className={classes.preview}
-              src={fileUrl}
-              alt="uploaded file preview"
-              onLoad={(event) =>
-                onImageLoad && onImageLoad(event.currentTarget)
-              }
-            />
-          )}
-          <input {...getInputProps()} />
-        </div>
+        <>
+          <button className={classes.button} {...getRootProps()}>
+            upload image
+          </button>
+          <span className={classes.dropzonePhrase}>or drop below</span>
+          <div className={classes.dropzone} {...getRootProps()}>
+            {fileUrl && (
+              <img
+                className={classes.preview}
+                src={fileUrl}
+                alt="uploaded file preview"
+                onLoad={(event) =>
+                  onImageLoad && onImageLoad(event.currentTarget)
+                }
+              />
+            )}
+            <input {...getInputProps()} />
+          </div>
+        </>
       )}
     </Dropzone>
   );

@@ -1,6 +1,11 @@
 import { useState } from "react";
 
-export const useImageFileUrl = () => {
+type ImageFileUrlHook = {
+  fileUrl: string;
+  updatePreview: (file: File[]) => void;
+};
+
+export const useImageFileUrl = (): ImageFileUrlHook => {
   const [fileUrl, setFileUrl] = useState("");
 
   const updatePreview = ([file]: File[]) => {
