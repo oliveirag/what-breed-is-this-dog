@@ -2,7 +2,7 @@
 
 Home assignment from @ridedott :)
 
-**Reponsive and at Heroku:**
+**Responsive and on Heroku:**
 https://what-breed-is-this-dog.herokuapp.com/
 
 ### Getting Started
