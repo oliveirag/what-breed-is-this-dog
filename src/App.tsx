@@ -30,7 +30,7 @@ export const App: FC = () => {
   return (
     <div className={classes.root}>
       <header className={classes.header}>
-        <img src={logo} alt="What breed is this dog?" />
+        <img src={logo} alt="What breed is this dog?" data-testid="app-logo" />
       </header>
 
       <ImageUploader
