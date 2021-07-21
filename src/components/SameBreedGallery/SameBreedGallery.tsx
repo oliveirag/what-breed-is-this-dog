@@ -1,6 +1,5 @@
 import React, { FC } from "react";
 import { useSameBreedGalleryStyles } from "./useSameBreedGalleryStyles";
-import LazyLoad from "react-lazyload";
 import useInfiniteScroll from "react-infinite-scroll-hook";
 import { useLoadItems } from "./useLoadItems";
 
@@ -17,6 +16,7 @@ export const SameBreedGallery: FC<Props> = ({ urls, requestHasError }) => {
     loading,
     hasNextPage,
     onLoadMore: loadMore,
+    disabled: !hasNextPage,
     rootMargin: "0px 0px 400px 0px",
   });
 
@@ -25,15 +25,13 @@ export const SameBreedGallery: FC<Props> = ({ urls, requestHasError }) => {
   }
 
   return (
-    <div className={classes.root}>
+    <ul className={classes.root}>
       {items.map((url, index) => (
-        <LazyLoad height={200} key={index} style={{ height: "100%" }} once>
-          <div className={classes.imageItem}>
-            <img className={classes.image} src={url} alt="x" />
-          </div>
-        </LazyLoad>
+        <li className={classes.imageItem} key={index}>
+          <img className={classes.image} src={url} alt="dog" loading="lazy" />
+        </li>
       ))}
       {(loading || hasNextPage) && <div ref={sentryRef}>Loading...</div>}
-    </div>
+    </ul>
   );
 };
