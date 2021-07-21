@@ -38,10 +38,9 @@ export const App: FC = () => {
         predictionHasError={predictionHasError}
       />
 
-      {(requestLoading || predictionLoading) && <Loading />}
-
       <BreedName breedIndex={breedIndex} />
 
+      {(requestLoading || predictionLoading) && <Loading />}
       {!predictionLoading && imagesUrls.length > 0 && (
         <SameBreedGallery urls={imagesUrls} requestHasError={requestHasError} />
       )}
