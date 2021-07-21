@@ -10,6 +10,7 @@ export const useImageUploaderStyles = makeStyles({
     fontFamily: "Aladin",
     fontSize: 32,
     color: "white",
+    cursor: "pointer",
   },
   dropzone: {
     "@media (max-width: 450px)": {
