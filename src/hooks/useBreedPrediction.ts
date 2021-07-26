@@ -4,7 +4,7 @@ import * as tf from "@tensorflow/tfjs";
 
 type BreedPredictionHook = {
   guessBreed: (image: HTMLImageElement) => void;
-  breedIndex: number | undefined;
+  breedIndex?: number;
   predictionLoading: boolean;
   predictionHasError: boolean;
 };

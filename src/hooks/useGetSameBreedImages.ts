@@ -8,7 +8,7 @@ type GetSameBreedImagesHook = {
 };
 
 export const useGetSameBreedImages = (
-  breedIndex: number | undefined
+  breedIndex?: number
 ): GetSameBreedImagesHook => {
   const [imagesUrls, setImagesUrls] = useState<string[]>([]);
   const [requestLoading, setRequestLoading] = useState<boolean>(false);

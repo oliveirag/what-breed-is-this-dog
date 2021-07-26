@@ -3,7 +3,7 @@ import { breeds } from "../../utils/breeds";
 import { useBreedNameStyles } from "./useBreedNameStyles";
 
 type Props = {
-  breedIndex: number | undefined;
+  breedIndex?: number;
 };
 
 export const BreedName: FC<Props> = ({ breedIndex }) => {

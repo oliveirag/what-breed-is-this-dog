@@ -31,7 +31,7 @@ export const ImageUploader: FC<Props> = ({
           <button className={classes.button} {...getRootProps()}>
             upload image
           </button>
-          <span className={classes.dropzonePhrase}>or drop below</span>
+          <span className={classes.dropzonePhrase}>or drop it below</span>
           <div className={classes.dropzone} {...getRootProps()}>
             {fileUrl && (
               <img

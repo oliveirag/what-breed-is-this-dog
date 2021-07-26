@@ -16,11 +16,12 @@ export const useLoadItems = (imageUrls: string[]): UseLoadItemsHook => {
 
   useEffect(() => {
     setItems([]);
+    setPage(0);
   }, [imageUrls]);
 
   const hasNextPage = items.length < imageUrls.length;
 
-  const loadMore = async () => {
+  const loadMore = () => {
     if (!hasNextPage) {
       return;
     }
