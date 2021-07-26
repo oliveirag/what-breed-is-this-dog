@@ -22,8 +22,13 @@ const useStyles = makeStyles({
 
 export const App: FC = () => {
   const classes = useStyles();
-  const { guessBreed, breedIndex, predictionLoading, predictionHasError } =
-    useBreedPrediction();
+  const {
+    guessBreed,
+    breedIndex,
+    modelLoading,
+    predictionLoading,
+    predictionHasError,
+  } = useBreedPrediction();
   const { imagesUrls, requestLoading, requestHasError } =
     useGetSameBreedImages(breedIndex);
 
@@ -33,14 +38,16 @@ export const App: FC = () => {
         <img src={logo} alt="What breed is this dog?" data-testid="app-logo" />
       </header>
 
-      <ImageUploader
-        onImageLoad={guessBreed}
-        predictionHasError={predictionHasError}
-      />
+      {!modelLoading && (
+        <ImageUploader
+          onImageLoad={guessBreed}
+          predictionHasError={predictionHasError}
+        />
+      )}
 
       <BreedName breedIndex={breedIndex} />
 
-      {(requestLoading || predictionLoading) && <Loading />}
+      {(requestLoading || predictionLoading || modelLoading) && <Loading />}
       {!predictionLoading && imagesUrls.length > 0 && (
         <SameBreedGallery urls={imagesUrls} requestHasError={requestHasError} />
       )}

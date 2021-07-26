@@ -5,6 +5,7 @@ import * as tf from "@tensorflow/tfjs";
 type BreedPredictionHook = {
   guessBreed: (image: HTMLImageElement) => void;
   breedIndex?: number;
+  modelLoading: boolean;
   predictionLoading: boolean;
   predictionHasError: boolean;
 };
@@ -12,6 +13,7 @@ type BreedPredictionHook = {
 export const useBreedPrediction = (): BreedPredictionHook => {
   const [model, setModel] = useState<GraphModel>();
   const [breedIndex, setBreedIndex] = useState<number>();
+  const [modelLoading, setModelLoading] = useState<boolean>(true);
   const [predictionLoading, setPredictionLoading] = useState<boolean>(false);
   const [predictionHasError, setPredictionHasError] = useState<boolean>(false);
 
@@ -25,8 +27,14 @@ export const useBreedPrediction = (): BreedPredictionHook => {
     })();
   }, []);
 
+  useEffect(() => {
+    if (model) {
+      setModelLoading(false);
+    }
+  }, [model]);
+
   const guessBreed = async (image: HTMLImageElement) => {
-    if (predictionHasError) {
+    if (predictionHasError || !model) {
       return;
     }
     try {
@@ -61,5 +69,11 @@ export const useBreedPrediction = (): BreedPredictionHook => {
     }
   };
 
-  return { guessBreed, breedIndex, predictionLoading, predictionHasError };
+  return {
+    guessBreed,
+    breedIndex,
+    modelLoading,
+    predictionLoading,
+    predictionHasError,
+  };
 };

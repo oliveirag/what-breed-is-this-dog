@@ -10,7 +10,7 @@ type UseLoadItemsHook = {
 const ITEMS_PER_PAGE = 12;
 
 export const useLoadItems = (imageUrls: string[]): UseLoadItemsHook => {
-  const [page, setPage] = useState(0);
+  const [page, setPage] = useState<number>(0);
   const [items, setItems] = useState<string[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
 
