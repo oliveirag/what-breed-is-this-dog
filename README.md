@@ -30,14 +30,21 @@ Where the hook made sense specifically to one component, it was left next to it,
 
 #### State
 
-I chose custom hooks to solve all state sharing problems and hold logic pertinent to their scope.
+I chose custom hooks to handle all stateful logic pertinent to their scope.
 Although I love Redux and Context a lot, both solutions weren't necessary.
 
 #### CSS-In-JS (@material-ui/styles)
 
-CSS-in-JS solution of Material UI deliver a better developer experience, make the style less prone to errors and easier to see the classes references.
+CSS-in-JS solution of Material UI deliver a better developer experience, make the styles less prone to errors and easier to see the classes references.
 
 #### LazyLoading
 
 Is done natively with `loading="lazy"` attribute set on `img` element.
-At first I used `react-lazyload` to a lazier loading, but as I implemented the infinite scroll, that already deliver the images in small chunks, it lost sense.
+At first I used `react-lazyload` to deliver a lazier loading, but as I implemented the infinite scroll, that already supply the images in small chunks, it lost sense.
+
+### About breeds.ts
+
+The list `breeds.ts` was also found [on the dog.ceo repository](https://github.com/dog-ceo/guess-that-dog/blob/main/src/lib/breeds.ts).
+I generated the `resourceId` property with a simple function to reverse the words and join with a `/`.
+
+Then, I manually corrected a few names, e.g. the breed `swiss mountain dog` where the resource path is actually `mountain/swiss` and the `mixed breed`, where the resource path is `mix.
