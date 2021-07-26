@@ -47,4 +47,4 @@ At first I used `react-lazyload` to deliver a lazier loading, but as I implement
 The list `breeds.ts` was also found [on the dog.ceo repository](https://github.com/dog-ceo/guess-that-dog/blob/main/src/lib/breeds.ts).
 I generated the `resourceId` property with a simple function to reverse the words and join with a `/`.
 
-Then, I manually corrected a few names, e.g. the breed `swiss mountain dog` where the resource path is actually `mountain/swiss` and the `mixed breed`, where the resource path is `mix.
+Then, I manually corrected a few names, e.g. the breed `swiss mountain dog` where the resource path is actually `mountain/swiss` and the `mixed breed`, where the resource path is `mix`.
